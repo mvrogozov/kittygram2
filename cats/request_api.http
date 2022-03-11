@@ -1,0 +1,143 @@
+GET https://906a0641-94e8-4362-8c50-533f94f43204.serverhub.praktikum-services.ru/api/v1/posts/
+
+###
+POST https://906a0641-94e8-4362-8c50-533f94f43204.serverhub.praktikum-services.ru/api/v1/posts/
+Content-Type: application/json; charset=utf-8
+
+{
+    "name": "tuzya1002",
+    "color": "black",
+    "birth_year": 2020,
+    "owner": 1,
+    "achievements": [
+        {"name": "поймал мышку"},
+        {"name": "разбил вазу"}
+    ]
+}
+
+###
+GET http://127.0.0.1:8000/cats/
+#Authorization:  token ec32e45992f563ec88349570813410aac4c17f25
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY2MDExLCJqdGkiOiJjNjNkYWZlYWNlMGY0NjAzYWU1YjFmNDdhZjVmYzUwYyIsInVzZXJfaWQiOjJ9.JUD5KzoueZ368ZlLu10HLk67G9fVIkGXQ_RQOEVBANE
+#ec32e45992f563ec88349570813410aac4c17f25
+###
+
+POST http://127.0.0.1:8000/cats/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY2MDExLCJqdGkiOiJjNjNkYWZlYWNlMGY0NjAzYWU1YjFmNDdhZjVmYzUwYyIsInVzZXJfaWQiOjJ9.JUD5KzoueZ368ZlLu10HLk67G9fVIkGXQ_RQOEVBANE
+Content-Type: application/json; charset=utf-8
+
+{
+    "name": "2Barsik",
+    "color": "Black",
+    "birth_year": 2020,
+    "achievements": [
+        {"achievement_name": "поймал мышку"},
+        {"achievement_name": "разбил вазу"}
+    ]
+}
+
+###
+POST http://127.0.0.1:8000/api-token-auth/
+Content-Type: application/json; charset=utf-8
+#Token: ec32e45992f563ec88349570813410aac4c17f25
+
+{
+    "username": "admin",
+    "password": "change_me"
+}
+###
+GET http://127.0.0.1:8000/auth/users/me/
+#Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2OTk5NTY3LCJqdGkiOiIyZjAzZWZiNzJhMDk0YmU5YjlmMzUyZDg0YjA0ODQ5MyIsInVzZXJfaWQiOjJ9.nN50XPV-trymb3lx7rsoR-F8DEKHRBEWmr6v3Seahw8
+#adm
+#Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY1ODg3LCJqdGkiOiI3YjBjYjljOGRlODI0NTgyYmYwNTc2MjJhYzI1Y2FlNyIsInVzZXJfaWQiOjF9.kqgZKARd_gV5Y6UN0o52ZCJGNkMwCXXPn9qosvg0N1s
+#usr1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY2MDExLCJqdGkiOiJjNjNkYWZlYWNlMGY0NjAzYWU1YjFmNDdhZjVmYzUwYyIsInVzZXJfaWQiOjJ9.JUD5KzoueZ368ZlLu10HLk67G9fVIkGXQ_RQOEVBANE
+#usr2
+#Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY1OTU1LCJqdGkiOiJiYWE1ZWFjNzcwNTM0M2I2YWVmNmZiYmFkYzkwZjhkNiIsInVzZXJfaWQiOjN9.kx31XWUWoZnh6QEmdfXdTG3LVjoAYxMRbtUX051bghM
+
+
+###
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json; charset=utf-8
+#Token: ec32e45992f563ec88349570813410aac4c17f25
+
+{
+    "username": "usr1",
+    "password": "change_me"
+}
+
+
+
+#  "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0Njk5OTU2NywianRpIjoiZjY3YWU1ZGRhMmQ5NGQ5N2EwMjliZWFlNmUxODZhOWYiLCJ1c2VyX2lkIjoyfQ.6QyWtHEmEkuu1i3r8oWhq7JA6VGJuKKVS_uFMyo0q7g",
+#  "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2OTk5NTY3LCJqdGkiOiIyZjAzZWZiNzJhMDk0YmU5YjlmMzUyZDg0YjA0ODQ5MyIsInVzZXJfaWQiOjJ9.nN50XPV-trymb3lx7rsoR-F8DEKHRBEWmr6v3Seahw8"
+
+
+
+
+###
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json; charset=utf-8
+#Token: ec32e45992f563ec88349570813410aac4c17f25
+
+{
+    "username": "usr2",
+    "password": "change_me"
+}
+
+#usr1 :  "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzA2NjAxMSwianRpIjoiNjY3ZmQ0NjAyYzQ3NGJmNzhiYmM3M2UyYzM3ZDg3ZTQiLCJ1c2VyX2lkIjoyfQ.rS9CIloezOXXH7SJdEYyGey2Z0lD3NfE20_4I347vOY",
+#        "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY2MDExLCJqdGkiOiJjNjNkYWZlYWNlMGY0NjAzYWU1YjFmNDdhZjVmYzUwYyIsInVzZXJfaWQiOjJ9.JUD5KzoueZ368ZlLu10HLk67G9fVIkGXQ_RQOEVBANE"
+
+#adm : "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzA2NTg4NywianRpIjoiMDhkZDBhYzNmNGQ2NDk2OGI0ZDRkNjY3NTM4ZDI3YjUiLCJ1c2VyX2lkIjoxfQ.SsCM80sPnDJxKYnhROK0AIalWYmL-LC_deufq9AEwE4",
+#       "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY1ODg3LCJqdGkiOiI3YjBjYjljOGRlODI0NTgyYmYwNTc2MjJhYzI1Y2FlNyIsInVzZXJfaWQiOjF9.kqgZKARd_gV5Y6UN0o52ZCJGNkMwCXXPn9qosvg0N1s"
+
+#usr2 : "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzA2NTk1NSwianRpIjoiYWI5ZmRmY2JhZjNhNDE3NGFjYTRmODZkMjJiMWZmYzUiLCJ1c2VyX2lkIjozfQ.AsPapIFu8FMIckIjs2Nh-7erkJcToRlc2lc7qoSl71c",
+#       "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MDY1OTU1LCJqdGkiOiJiYWE1ZWFjNzcwNTM0M2I2YWVmNmZiYmFkYzkwZjhkNiIsInVzZXJfaWQiOjN9.kx31XWUWoZnh6QEmdfXdTG3LVjoAYxMRbtUX051bghM"
+
+
+###
+POST http://127.0.0.1:8000/mycats/
+Content-type: application/json; charset=utf-8
+Authorization:  token ec32e45992f563ec88349570813410aac4c17f25
+
+{
+    "name": "w8",
+    "color": "White",
+    "birth_year": 2020,
+    "owner": 1,
+    "achievements": [
+        {"achievement_name": "поймал мышку"},
+        {"achievement_name": "разбил вазу"}
+    ]
+}
+
+###
+POST http://127.0.0.1:8000/cats/
+Content-type: application/json; charset=utf-8
+
+{
+    "name": "tuzya1002",
+    "color": "#228B22",
+    "birth_year": 2020,
+    "owner": 1
+}
+###
+
+
+PATCH http://127.0.0.1:8000/cats/2/
+Content-Type: application/json; charset=utf-8
+
+{
+    "owner": 2
+    
+}
+###
+GET http://127.0.0.1:8000/owner/
+
+###
+POST http://127.0.0.1:8000/owner/
+Content-type: application/json; charset=utf-8
+
+{
+    "first_name": "Vasya",
+    "last_name": "Baggins"
+}
